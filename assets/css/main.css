@@ -58,15 +58,6 @@ header#banner nav ul li a {
     color: #454545;
 }
 
-main#content a {
-    color: #007dfa;
-    text-decoration: none;
-}
-
-main#content a:hover {
-    text-decoration: underline;
-}
-
 main#content h1,
 main#content h2,
 main#content h3,
@@ -262,6 +253,6 @@ footer#footer {
     font-size: 14px;
     font-size: 1.4rem;
     font-weight: 300;
-    color: #949494;
+    color: #000;
     margin: 40px 0;
 }
