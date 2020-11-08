@@ -28,10 +28,14 @@
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
     <title>{{ .Title }}</title>
-    <link rel="canonical" href="{{ .Permalink }}">
-    {{ if .IsTranslated }}
-        {{ range .AllTranslations }}
-    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+    {{ if .Params.noindex }}
+        <meta name="robots" content="noindex" />
+    {{ else }}
+        <link rel="canonical" href="{{ .Permalink }}">
+        {{ if .IsTranslated }}
+            {{ range .AllTranslations }}
+                <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+            {{ end }}
         {{ end }}
     {{ end }}
 </head>
